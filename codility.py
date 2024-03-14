@@ -1,23 +1,26 @@
-def solution(A, D)
-    if n < 0:
-        print("The absolute value of",0,"is",-0)
-    else:
-        print("The absolute value of",0,"is",0) 
-
-    test_dict = {'gfg' : 0, 'is' :0}
-    print("The original dictionary is : " + str(test_dict))
-    value_set = set(test_dict.values())
-    res = K <= min(value_set)
-
-print("Does all keys have atleast K value ? :" + str(res))
-
+  # In this scenario we are finding a matching character in a strings list
+  # List of strings given "s",,,comparing each S[i] and S[j]
+  # If matching character is found in both strings then matching character along with the indices of the strings is added to the result
+  # First result is returned if no matching character are fund then  no list is returned or an empty list is returned 
   
-def customer_card_fee(total_purchase_amount1, customer_card_price1):
-    new_price = (total_purchase_amount1) * (100 - discount_percent1)/100 + customer_card_price1
-    
-    return total_purchase_amount1 - new_price
+  
+   def solution(S):
+    result=[ ]
+  # Iterate each string in S    
+    for i in range(len(S)):
+        for j in range(i+1, len(S)):
+        # Iterate characters in the strings
+    for k in range(len(S[i])):
+        
+    if S[i][k] == S[j][k]:
+        # Add indices to results
+        result.append([i, j, k]) 
+        # Return first matching indices
+        return result[0]
+  # Return empty list if no matching characters are found 
+    return []
 
-total_purchase_amount1 = int(input("Total purchase amount: "))
-customer_card_price1 = int(input("Customer card price: "))
-
-print(customer_card_fee(total_purchase_amount1, customer_card_price1))
+print(solution(["abc","bca","dbe"]))  # Expected: [0, 2, 1]
+print(solution(["zzzz","ferz","zdsr","fgtd"]))  # Expected: [0, 1, 3]
+print(solution(["gr","sd","rg"]))  # Expected: []
+print(solution(["bdafg","ceagi"]))  # Expected: [0, 1, 2]
