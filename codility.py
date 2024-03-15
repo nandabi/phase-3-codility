@@ -10,13 +10,11 @@
     for i in range(len(S)):
         for j in range(i+1, len(S)):
         # Iterate characters in the strings
-    for k in range(len(S[i])):
+    for k in range(len(S[0])):
         
     if S[i][k] == S[j][k]:
-        # Add indices to results
-        result.append([i, j, k]) 
         # Return first matching indices
-        return result[0]
+        return [i,j,k]
   # Return empty list if no matching characters are found 
     return []
 
